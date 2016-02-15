@@ -1,6 +1,6 @@
 import math
 
-class Sort:
+class Sort(object):
 
     def insertion_sort(self, array, order):
         if order > 0:
