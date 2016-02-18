@@ -10,6 +10,8 @@ class TestSearching:
 
     def test_binary_search(self):
         search = clrs.searching.Search()
-        array = [1, 15, 29, 62, 44, 103, 299, 1000, 9999]
-        assert search.binary_search(array, 0, len(array) - 1, 62) == 3
+        array = [1, 15, 29, 32, 44, 103, 299, 1000, 9999]
+        assert search.binary_search(array, 0, len(array) - 1, 44) == 4
+        assert search.binary_search(array, 0, len(array) - 1, 1) == 0
+        assert search.binary_search(array, 0, len(array) - 1, 9999) == 8
         assert search.binary_search(array, 0, len(array) - 1, 45) == None
