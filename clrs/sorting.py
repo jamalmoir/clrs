@@ -20,12 +20,14 @@ class Sort(object):
                 key = array[j]
                 i = j + 1
 
-            else:
                 while i < len(array) and array[i] > key:
                     array[i - 1] = array[i]
                     i = i + 1
 
                 array[i - 1] = key
+
+        else:
+            print("Invalid order")
 
     def selection_sort(self, array):
         for i in range(0, len(array)):
