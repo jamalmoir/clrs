@@ -53,3 +53,20 @@ class TestSorting:
         assert array_2 == [1, 2, 54, 90, 100, 999, 24555]
         assert array_3 == [1, 2]
         assert array_4 == [1, 2, 3, 4, 5]
+
+    def test_merge_sort(self):
+        sort = clrs.sorting.Sort()
+        array_1 = [2, 45, 78, 55, 678, 34, 69999, 9999, 34, 45]
+        array_2 = [999, 100, 24555, 90, 1, 54, 2]
+        array_3 = [2, 1]
+        array_4 = [1, 2, 3, 4, 5]
+
+        sort.merge_sort(array_1, 0, len(array_1) - 1)
+        sort.merge_sort(array_2, 0, len(array_2) - 1)
+        sort.merge_sort(array_3, 0, len(array_3) - 1)
+        sort.merge_sort(array_4, 0, len(array_4) - 1)
+
+        assert array_1 == [2, 34, 34, 45, 45, 55, 78, 678, 9999, 69999]
+        assert array_2 == [1, 2, 54, 90, 100, 999, 24555]
+        assert array_3 == [1, 2]
+        assert array_4 == [1, 2, 3, 4, 5]
