@@ -1,8 +1,8 @@
 class Search(object):
 
     def linear_search(self, array, val):
-        for i in range(0, len(array)):
-            if array[i] == val:
+        for i, compare in enumerate(array):
+            if compare == val:
                 return i
 
         return None
