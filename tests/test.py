@@ -1,6 +1,7 @@
 import pytest
 from .context import clrs
 
+
 class TestSearching:
 
     def test_linear_search(self):

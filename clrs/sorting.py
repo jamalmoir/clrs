@@ -5,7 +5,7 @@ class Sort(object):
 
     def insertion_sort(self, array, order):
         if order > 0:
-            for j in range(1, len(array)):
+            for j, val in enumerate(array):
                 key = array[j]
                 i = j - 1
 
@@ -16,7 +16,7 @@ class Sort(object):
                 array[i + 1] = key
 
         elif order < 0:
-            for j in range(len(array) - 1, -1, -1):
+            for j, val in reversed(list(enumerate(array))):
                 key = array[j]
                 i = j + 1
 
@@ -30,15 +30,15 @@ class Sort(object):
             print("Invalid order")
 
     def selection_sort(self, array):
-        for i in range(0, len(array)):
-            lowest = (array[i], i)
+        for i, val in enumerate(array):
+            lowest = (i, val)
 
-            for j in range(i, len(array)):
-                if array[j] < lowest[0]:
-                    lowest = (array[j], j)
+            for j, compare in enumerate(array[i:], i):
+                if compare < lowest[1]:
+                    lowest = (j, compare)
 
-            array[lowest[1]] = array[i]
-            array[i] = lowest[0]
+            array[lowest[0]] = val
+            array[i] = lowest[1]
 
     def merge_sort(self, array, p, r):
         if p < r:
